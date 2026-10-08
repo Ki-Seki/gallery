@@ -1,25 +1,31 @@
 # The Kiseki Gallery
 
-一摞随机洗过的照片。拖走最上面那张看下一张，点开看大图。
+A shuffled pile of photo prints. Drag the top one away to see the next, click it to look closer.
 
 https://ki-seki.github.io/gallery/
 
-## 加照片
+## Adding photos
 
-1. 在 GitHub 上进入 [`photos/`](photos) 文件夹 → **Add file → Upload files**，把照片拖进去，Commit。
-2. 没了。Action 会自动：
-   - 转正方向，长边缩到 2400px，重新压成渐进式 JPEG（GPS 等元数据会被去掉，只留拍摄时间和机型）
-   - 生成 960px 的 WebP 缩略图到 `thumbs/`
-   - 更新 `photos.json`，并把压缩结果提交回仓库
-   - 部署到 GitHub Pages
+1. On GitHub, open [`photos/`](photos) → **Add file → Upload files**, drop the photos in, commit.
+2. That's it. The workflow then:
+   - turns each photo upright, scales the long edge down to 2400 px and re-encodes it as a progressive JPEG, keeping its EXIF (camera, lens, exposure, date, GPS)
+   - removes duplicates: a photo that looks the same as one already in the gallery (re-upload, other name, HEIC vs JPEG, recompressed export, light edit) is deleted, and the copy that was there first stays
+   - writes a 960 px WebP thumbnail to `thumbs/`
+   - rebuilds `photos.json`, commits the result back, and deploys to GitHub Pages
 
-支持 JPEG / PNG / HEIC / WebP / TIFF / AVIF。不小心传到仓库根目录也没关系，会被挪进 `photos/`。
+JPEG, PNG, HEIC, WebP, TIFF and AVIF all work. Photos uploaded to the repo root by mistake get moved into `photos/`.
 
-**删照片**：直接删 `photos/` 里的文件，缩略图和清单会跟着清理。
+**Removing a photo**: delete it from `photos/`; its thumbnail and manifest entry go with it.
 
-> 网页上传单个文件上限 25 MB。更大的图（比如 40 MB 的修图导出）用 `git push`（上限 100 MB），或者先在本地跑一遍下面的脚本再提交，这样大原图也不会进 git 历史。
+> The web uploader takes files up to 25 MB. For bigger ones (a 40 MB edit export, say), use `git push` (100 MB limit), or run the script locally first so the full-size original never enters git history.
 
-## 本地预览
+## In the viewer
+
+- `prev` / `next`, arrow keys, swipe, or click the left / right half of the photo
+- zoom with the scroll wheel, a trackpad or touch pinch, a double click / double tap, `+` / `-` / `0`, or the `－ ＋` buttons; drag to pan
+- `info` (or `i`) shows the EXIF details and a map link when the photo has a location
+
+## Local preview
 
 ```bash
 pip install -r scripts/requirements.txt
@@ -27,17 +33,17 @@ python scripts/process.py
 python -m http.server 4173
 ```
 
-然后打开 http://localhost:4173 。
+Then open http://localhost:4173.
 
-## 结构
+## Layout
 
 ```
-index.html, assets/   页面（纯静态，无构建）
-photos/               照片（上传到这里，会被原地压缩）
-thumbs/               自动生成的缩略图
-photos.json           自动生成的清单
-scripts/process.py    压缩 + 缩略图 + 清单
-.github/workflows/    压缩、提交、部署
+index.html, assets/   the page (static, no build step)
+photos/               photos (upload here; optimized in place)
+thumbs/               generated thumbnails
+photos.json           generated manifest
+scripts/process.py    optimize, dedupe, thumbnail, manifest
+.github/workflows/    run the script, commit, deploy
 ```
 
-压缩参数在 `scripts/process.py` 顶部（`MAX_EDGE`、`QUALITY`、`THUMB_EDGE`…）。
+Tunables (`MAX_EDGE`, `QUALITY`, `THUMB_EDGE`, `DUP_BITS`, …) sit at the top of `scripts/process.py`.

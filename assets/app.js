@@ -307,6 +307,16 @@
 
   // --- viewer ---------------------------------------------------------------
 
+  const stage = $('.stage', viewer)
+  const info = $('.info', viewer)
+  const zoomLabel = $('[data-zoom]', viewer)
+  const MAX_ZOOM = 4
+  let zoom = { z: 1, x: 0, y: 0 }
+  let showInfo = false
+  try {
+    showInfo = localStorage.getItem('gallery:info') === '1'
+  } catch {}
+
   function step(d) {
     pos += d
     sync()
@@ -315,7 +325,26 @@
 
   function render() {
     const p = photoAt(pos)
-    const stage = $('.stage', viewer)
+    lo.src = href(p.thumb, p.v)
+    hi.classList.remove('in')
+    hi.dataset.id = p.id
+    hi.onload = () => hi.dataset.id === p.id && hi.classList.add('in')
+    hi.src = href(p.src, p.v)
+    hi.alt = 'Photograph' + (p.taken ? ', ' + new Date(p.taken).toDateString() : '')
+    fillInfo(p)
+    layout()
+    history.replaceState(null, '', '#' + encodeURIComponent(p.id))
+
+    for (const d of [1, -1]) {
+      const q = photoAt(pos + d)
+      new Image().src = href(q.src, q.v)
+    }
+  }
+
+  function layout() {
+    const p = photoAt(pos)
+    info.hidden = !showInfo
+    $('[data-act="info"]', viewer).setAttribute('aria-pressed', showInfo)
     const cs = getComputedStyle(stage)
     const sw = stage.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)
     const sh = stage.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom)
@@ -324,24 +353,233 @@
     frame.style.setProperty('--b', b + 'px')
     frame.style.width = Math.round(p.w * s) + 2 * b + 'px'
     frame.style.height = Math.round(p.h * s) + 2 * b + 'px'
+    setZoom({ z: 1, x: 0, y: 0 })
+  }
 
-    lo.src = href(p.thumb, p.v)
-    hi.classList.remove('in')
-    hi.dataset.id = p.id
-    hi.onload = () => hi.dataset.id === p.id && hi.classList.add('in')
-    hi.src = href(p.src, p.v)
-    const date = p.taken ? new Date(p.taken) : null
-    hi.alt = 'Photograph' + (date ? ', ' + date.toDateString() : '')
-    $('[data-date]', viewer).textContent = date
-      ? date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
-      : ''
-    history.replaceState(null, '', '#' + encodeURIComponent(p.id))
+  // --- info panel
 
-    for (const d of [1, -1]) {
-      const q = photoAt(pos + d)
-      new Image().src = href(q.src, q.v)
+  const fmt = (n) => String(+n.toFixed(1))
+
+  function shutter(t) {
+    return t >= 0.3 ? fmt(t) + ' s' : '1/' + Math.round(1 / t) + ' s'
+  }
+
+  function fillInfo(p) {
+    const e = p.exif || {}
+    const rows = []
+    if (p.taken) {
+      const d = new Date(p.taken)
+      rows.push([
+        'Taken',
+        d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) +
+          ', ' +
+          p.taken.slice(11, 16),
+      ])
+    }
+    if (e.camera) rows.push(['Camera', e.camera])
+    if (e.lens) rows.push(['Lens', e.lens])
+    const exposure = [
+      e.focal && fmt(e.focal) + ' mm' + (e.focal35 && e.focal35 !== Math.round(e.focal) ? ` (${e.focal35} mm eq.)` : ''),
+      e.fnumber && 'ƒ/' + fmt(e.fnumber),
+      e.exposure && shutter(e.exposure),
+      e.iso && 'ISO ' + e.iso,
+      e.bias && (e.bias > 0 ? '+' : '') + fmt(e.bias) + ' EV',
+    ].filter(Boolean)
+    if (exposure.length) rows.push(['Exposure', exposure.join(' · ')])
+    if (e.gps) {
+      const [lat, lon] = e.gps
+      const a = document.createElement('a')
+      a.href = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`
+      a.target = '_blank'
+      a.rel = 'noopener noreferrer'
+      a.textContent =
+        `${Math.abs(lat).toFixed(4)}° ${lat < 0 ? 'S' : 'N'}, ` + `${Math.abs(lon).toFixed(4)}° ${lon < 0 ? 'W' : 'E'} ↗`
+      rows.push(['Location', a])
+    }
+    const file = document.createElement('a')
+    file.href = href(p.src, p.v)
+    file.target = '_blank'
+    file.textContent = p.src.split('/').pop()
+    rows.push(['File', file])
+    rows.push(['Size', `${p.w} × ${p.h}` + (p.bytes ? ` · ${Math.round(p.bytes / 1024)} KB` : '')])
+
+    const dl = $('dl', info)
+    dl.replaceChildren(
+      ...rows.flatMap(([k, v]) => {
+        const dt = document.createElement('dt')
+        const dd = document.createElement('dd')
+        dt.textContent = k
+        dd.append(v)
+        return [dt, dd]
+      })
+    )
+  }
+
+  function toggleInfo() {
+    showInfo = !showInfo
+    try {
+      localStorage.setItem('gallery:info', showInfo ? '1' : '0')
+    } catch {}
+    layout()
+  }
+
+  // --- zoom: frame keeps its fitted size; CSS translate + scale do the rest
+
+  function origin() {
+    const r = stage.getBoundingClientRect()
+    return {
+      r,
+      x: r.left + frame.offsetLeft + frame.offsetWidth / 2,
+      y: r.top + frame.offsetTop + frame.offsetHeight / 2,
     }
   }
+
+  function setZoom(next, animate = false) {
+    const { r, x: cx, y: cy } = origin()
+    const z = clamp(next.z, 1, MAX_ZOOM)
+    const w = frame.offsetWidth * z
+    const h = frame.offsetHeight * z
+    // keep the photo covering the stage once it's bigger than it
+    const pan = (size, lo, hi, c, v) => (size <= hi - lo ? 0 : clamp(v, hi - c - size / 2, lo - c + size / 2))
+    zoom = { z, x: pan(w, r.left, r.right, cx, next.x), y: pan(h, r.top, r.bottom, cy, next.y) }
+    frame.classList.toggle('easing', animate && !reduced.matches)
+    frame.style.translate = `${zoom.x}px ${zoom.y}px`
+    frame.style.scale = zoom.z
+    viewer.classList.toggle('zoomed', zoom.z > 1.001)
+    zoomLabel.textContent = Math.round(zoom.z * 100) + '%'
+  }
+
+  // zoom to z, keeping the point under (px, py) where it is
+  function zoomAt(z, px, py, animate) {
+    const c = origin()
+    z = clamp(z, 1, MAX_ZOOM)
+    const ux = (px - c.x - zoom.x) / zoom.z
+    const uy = (py - c.y - zoom.y) / zoom.z
+    setZoom({ z, x: px - c.x - ux * z, y: py - c.y - uy * z }, animate)
+  }
+
+  function zoomBy(f) {
+    const { r } = origin()
+    zoomAt(zoom.z * f, r.left + r.width / 2, r.top + r.height / 2, true)
+  }
+
+  const resetZoom = () => setZoom({ z: 1, x: 0, y: 0 }, true)
+
+  // --- gestures: tap sides = prev/next, double tap = zoom, swipe, pinch, pan
+
+  const pointers = new Map()
+  let gesture = null
+  let tapTimer = 0
+  let lastTap = 0
+  const mid = (a, b) => ({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 })
+  const panFrom = (x, y) => ({ type: 'pan', x0: x, y0: y, start: { ...zoom }, moved: true })
+
+  stage.addEventListener('pointerdown', (e) => {
+    if (e.button > 0) return
+    try {
+      stage.setPointerCapture(e.pointerId)
+    } catch {}
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+    if (pointers.size === 1) {
+      gesture = { type: 'pan', x0: e.clientX, y0: e.clientY, start: { ...zoom }, moved: false }
+    } else if (pointers.size === 2) {
+      clearTimeout(tapTimer)
+      const [a, b] = [...pointers.values()]
+      gesture = { type: 'pinch', d0: Math.hypot(a.x - b.x, a.y - b.y) || 1, m0: mid(a, b), start: { ...zoom } }
+    }
+  })
+
+  stage.addEventListener('pointermove', (e) => {
+    moveCursor(e)
+    if (!pointers.has(e.pointerId)) return
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+    if (gesture?.type === 'pinch' && pointers.size >= 2) {
+      const [a, b] = [...pointers.values()]
+      const m = mid(a, b)
+      const c = origin()
+      const s = gesture.start
+      const z = clamp((s.z * Math.hypot(a.x - b.x, a.y - b.y)) / gesture.d0, 1, MAX_ZOOM)
+      const ux = (gesture.m0.x - c.x - s.x) / s.z
+      const uy = (gesture.m0.y - c.y - s.y) / s.z
+      setZoom({ z, x: m.x - c.x - ux * z, y: m.y - c.y - uy * z })
+    } else if (gesture?.type === 'pan') {
+      const dx = e.clientX - gesture.x0
+      const dy = e.clientY - gesture.y0
+      if (Math.hypot(dx, dy) > 6) gesture.moved = true
+      if (zoom.z > 1 && gesture.moved) {
+        viewer.classList.add('panning')
+        setZoom({ z: zoom.z, x: gesture.start.x + dx, y: gesture.start.y + dy })
+      }
+    }
+  })
+
+  function release(e) {
+    if (!pointers.has(e.pointerId)) return
+    pointers.delete(e.pointerId)
+    const g = gesture
+    if (g?.type === 'pinch') {
+      // the finger left on the glass keeps panning, never taps
+      const rest = [...pointers.values()][0]
+      gesture = rest ? panFrom(rest.x, rest.y) : null
+      if (zoom.z < 1.05) resetZoom()
+      return
+    }
+    gesture = null
+    viewer.classList.remove('panning')
+    if (g?.type !== 'pan' || e.type === 'pointercancel') return
+    const dx = e.clientX - g.x0
+    const dy = e.clientY - g.y0
+    if (zoom.z <= 1 && Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) return step(dx < 0 ? 1 : -1)
+    if (g.moved) return
+
+    const now = performance.now()
+    if (now - lastTap < 280) {
+      clearTimeout(tapTimer)
+      lastTap = 0
+      return zoom.z > 1 ? resetZoom() : zoomAt(2.5, e.clientX, e.clientY, true)
+    }
+    lastTap = now
+    if (zoom.z > 1) return
+    const { r } = origin()
+    const side = e.clientX < r.left + r.width / 2 ? -1 : 1
+    tapTimer = setTimeout(() => step(side), 260) // wait: it may become a double tap
+  }
+
+  stage.addEventListener('pointerup', release)
+  stage.addEventListener('pointercancel', release)
+
+  stage.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault()
+      const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY
+      zoomAt(zoom.z * Math.exp(-dy * (e.ctrlKey ? 0.01 : 0.002)), e.clientX, e.clientY)
+    },
+    { passive: false }
+  )
+
+  // Safari trackpad pinch (touch pinch is handled by the pointer code above)
+  let gestureZ = 1
+  stage.addEventListener('gesturestart', (e) => {
+    if (!finePointer.matches) return
+    e.preventDefault()
+    gestureZ = zoom.z
+  })
+  stage.addEventListener('gesturechange', (e) => {
+    if (!finePointer.matches) return
+    e.preventDefault()
+    zoomAt(gestureZ * e.scale, e.clientX, e.clientY)
+  })
+
+  function moveCursor(e) {
+    if (!finePointer.matches || e.pointerType !== 'mouse' || zoom.z > 1) return cursor.classList.remove('on')
+    const { r } = origin()
+    cursor.textContent = e.clientX < r.left + r.width / 2 ? 'prev' : 'next'
+    cursor.style.transform = `translate(${e.clientX + 10}px, ${e.clientY + 12}px)`
+    cursor.classList.add('on')
+  }
+
+  stage.addEventListener('pointerleave', () => cursor.classList.remove('on'))
 
   function open(viaKey = false) {
     if (!deck.length) return
@@ -355,36 +593,12 @@
 
   function close() {
     viewing = false
+    clearTimeout(tapTimer)
     viewer.classList.remove('open')
     cursor.classList.remove('on')
     history.replaceState(null, '', location.pathname + location.search)
     setTimeout(() => !viewing && (viewer.hidden = true), ms(240))
   }
-
-  const stage = $('.stage', viewer)
-  let swipe = null
-
-  stage.addEventListener('pointerdown', (e) => {
-    swipe = { x: e.clientX, y: e.clientY }
-  })
-
-  stage.addEventListener('pointerup', (e) => {
-    if (!swipe) return
-    const dx = e.clientX - swipe.x
-    const dy = e.clientY - swipe.y
-    swipe = null
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1)
-    else if (Math.hypot(dx, dy) < 10) step(e.clientX < innerWidth / 2 ? -1 : 1)
-  })
-
-  stage.addEventListener('pointermove', (e) => {
-    if (!finePointer.matches) return
-    cursor.textContent = e.clientX < innerWidth / 2 ? 'prev' : 'next'
-    cursor.style.transform = `translate(${e.clientX + 10}px, ${e.clientY + 12}px)`
-    cursor.classList.add('on')
-  })
-
-  stage.addEventListener('pointerleave', () => cursor.classList.remove('on'))
 
   // --- controls -------------------------------------------------------------
 
@@ -393,8 +607,11 @@
     prev,
     shuffle,
     close,
+    info: toggleInfo,
     vnext: () => step(1),
     vprev: () => step(-1),
+    zoomin: () => zoomBy(1.5),
+    zoomout: () => zoomBy(1 / 1.5),
   }
 
   document.addEventListener('click', (e) => {
@@ -405,13 +622,19 @@
   addEventListener('keydown', (e) => {
     if (e.metaKey || e.ctrlKey || e.altKey) return
     if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('button, a')) return
+    const k = e.key
     if (viewing) {
-      if (e.key === 'Escape') close()
-      else if (e.key === 'ArrowRight') step(1)
-      else if (e.key === 'ArrowLeft') step(-1)
+      if (k === 'Escape') close()
+      else if (k === 'ArrowRight') step(1)
+      else if (k === 'ArrowLeft') step(-1)
+      else if (k === '+' || k === '=') zoomBy(1.5)
+      else if (k === '-' || k === '_') zoomBy(1 / 1.5)
+      else if (k === '0') resetZoom()
+      else if (k === 'i') toggleInfo()
+      else return
+      e.preventDefault()
       return
     }
-    const k = e.key
     if (k === 'ArrowRight' || k === 'ArrowDown' || k === ' ') next()
     else if (k === 'ArrowLeft' || k === 'ArrowUp') prev()
     else if (k === 'Enter') open(true)
@@ -425,15 +648,11 @@
     clearTimeout(resizeTimer)
     resizeTimer = setTimeout(() => {
       rebuild()
-      if (viewing) render()
+      if (viewing) layout()
     }, 120)
   })
 
   // --- boot -----------------------------------------------------------------
-
-  if (!finePointer.matches) {
-    $('.intro .hint').textContent = 'Swipe the top print away to see the next one. Tap it to look closer.'
-  }
 
   fetch('photos.json', { cache: 'no-cache' })
     .then((r) => (r.ok ? r.json() : []))

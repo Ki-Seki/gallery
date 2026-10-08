@@ -81,6 +81,13 @@ button {
   border: 0;
   padding: 0;
   cursor: pointer;
+  touch-action: manipulation;
+}
+
+button[aria-pressed="true"] {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 1px;
 }
 
 a:hover,
@@ -99,7 +106,6 @@ button:hover {
 .intro {
   position: relative;
   z-index: 2;
-  max-width: 44ch;
   padding: 12px var(--gutter) 0;
   pointer-events: none;
 }
@@ -110,11 +116,6 @@ button:hover {
 
 .intro a {
   pointer-events: auto;
-}
-
-.intro .hint {
-  margin-top: 0.5em;
-  color: var(--muted);
 }
 
 /* bar — four columns, like the original nav */
@@ -141,8 +142,11 @@ button:hover {
   font-variant-numeric: tabular-nums;
 }
 
-.meta {
-  color: var(--muted);
+.zoom [data-zoom] {
+  display: inline-block;
+  min-width: 4ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 /* table + pile */
@@ -280,6 +284,7 @@ button:hover {
   inset: 0;
   z-index: 10;
   display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: minmax(0, 1fr) auto;
   background: var(--table);
   opacity: 0;
@@ -294,15 +299,45 @@ button:hover {
   opacity: 1;
 }
 
+.viewer .bar {
+  grid-column: 1 / -1;
+}
+
 .stage {
+  position: relative;
   margin: 0;
+  min-width: 0;
   min-height: 0;
   display: grid;
   place-items: center;
   padding: calc(var(--gutter) + 8px) var(--gutter) 4px;
-  touch-action: pan-y;
+  overflow: hidden;
+  touch-action: none;
   user-select: none;
   -webkit-user-select: none;
+}
+
+.info {
+  width: 280px;
+  padding: calc(var(--gutter) + 8px) var(--gutter) 0 4px;
+  overflow-y: auto;
+}
+
+.info[hidden] {
+  display: none;
+}
+
+.info dl {
+  margin: 0;
+}
+
+.info dt {
+  color: var(--muted);
+}
+
+.info dd {
+  margin: 0 0 0.85em;
+  overflow-wrap: anywhere;
 }
 
 .frame {
@@ -317,6 +352,13 @@ button:hover {
 
 .viewer.open .frame {
   transform: none;
+}
+
+.frame.easing {
+  transition:
+    transform 0.32s cubic-bezier(0.2, 0.8, 0.25, 1),
+    translate 0.28s cubic-bezier(0.2, 0.8, 0.25, 1),
+    scale 0.28s cubic-bezier(0.2, 0.8, 0.25, 1);
 }
 
 .frame img {
@@ -340,6 +382,14 @@ button:hover {
 
 .viewer.can-hover .stage {
   cursor: none;
+}
+
+.viewer.can-hover.zoomed .stage {
+  cursor: grab;
+}
+
+.viewer.can-hover.panning .stage {
+  cursor: grabbing;
 }
 
 .cursor {
@@ -375,8 +425,29 @@ button:hover {
     gap: 10px;
   }
 
-  .viewer .meta {
+  .viewer {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto auto;
+  }
+
+  .viewer .zoom {
     display: none;
+  }
+
+  .info {
+    width: auto;
+    max-height: 40vh;
+    padding: 4px var(--gutter) 0;
+  }
+
+  .info dl {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 2px 14px;
+  }
+
+  .info dd {
+    margin: 0;
   }
 }
 

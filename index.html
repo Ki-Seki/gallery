@@ -20,13 +20,11 @@
   <body>
     <header class="intro">
       <p>
-        I'm Shichao Song. This gallery is where light and memory meet. You can also visit
+        Shichao Song &middot;
         <a href="https://ki-seki.github.io/" target="_blank" rel="noopener noreferrer"
           >The Kiseki Log <span aria-hidden="true">↗</span></a
         >
-        for notes on my work and life.
       </p>
-      <p class="hint">Drag the top print away to see the next one. Click it to look closer.</p>
     </header>
 
     <main class="table" id="table">
@@ -48,10 +46,18 @@
           <img class="hi" alt="" draggable="false" />
         </div>
       </figure>
+      <aside class="info" aria-label="Photo details" hidden><dl></dl></aside>
       <nav class="bar" aria-label="Photo">
-        <span><button type="button" data-act="close">close</button></span>
+        <span
+          ><button type="button" data-act="close">close</button> &middot;
+          <button type="button" data-act="info" aria-pressed="false">info</button></span
+        >
         <span><button type="button" data-act="vprev">prev</button> &middot; <button type="button" data-act="vnext">next</button></span>
-        <span class="meta" data-date></span>
+        <span class="zoom"
+          >zoom <button type="button" data-act="zoomout" aria-label="Zoom out">&#xFF0D;</button>
+          <span data-zoom>100%</span>
+          <button type="button" data-act="zoomin" aria-label="Zoom in">&#xFF0B;</button></span
+        >
         <span class="index"><span data-cur>0000</span> / <span data-total>0000</span></span>
       </nav>
       <div class="cursor" aria-hidden="true"></div>

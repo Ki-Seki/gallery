@@ -7,9 +7,24 @@
   "h": 1807,
   "tw": 960,
   "th": 723,
+  "bytes": 1073907,
   "color": "#394634",
   "taken": "2026-04-19T13:32:18",
-  "v": "2beccc39a9"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 23.6,
+   "focal35": 87,
+   "fnumber": 2.73,
+   "exposure": 0.01,
+   "iso": 50,
+   "gps": [
+    39.99916,
+    116.263292
+   ]
+  },
+  "dhash": "d288eb807148ae205220f604c701d581ed015801f800f800fa20fa10f802f800",
+  "v": "7d561914e2",
+  "schema": 2
  },
  {
   "id": "IMG_20260419_124717",
@@ -19,9 +34,24 @@
   "h": 1807,
   "tw": 960,
   "th": 723,
+  "bytes": 427054,
   "color": "#9a9480",
   "taken": "2026-04-19T12:47:17",
-  "v": "b38b8a4a42"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 200,
+   "fnumber": 2.96,
+   "exposure": 0.01,
+   "iso": 50,
+   "gps": [
+    39.991841,
+    116.275108
+   ]
+  },
+  "dhash": "288094449a025a04ac9a1ca55ce36b197d7122137e001685d49323011073760f",
+  "v": "1f6458ab86",
+  "schema": 2
  },
  {
   "id": "IMG_20260419_123806",
@@ -31,9 +61,24 @@
   "h": 1807,
   "tw": 960,
   "th": 723,
+  "bytes": 540297,
   "color": "#8b877b",
   "taken": "2026-04-19T12:38:06",
-  "v": "34b2d5d356"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 19.9,
+   "focal35": 75,
+   "fnumber": 2.39,
+   "exposure": 0.006381,
+   "iso": 50,
+   "gps": [
+    39.996413,
+    116.26815
+   ]
+  },
+  "dhash": "a800b2009c00aa00a300c580c180cd98c598e998f9887588e8b4d4b583b91588",
+  "v": "f862d34958",
+  "schema": 2
  },
  {
   "id": "IMG_20260419_122001_1776599326060edit",
@@ -43,9 +88,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 700489,
   "color": "#babdaf",
   "taken": "2026-04-19T12:20:01",
-  "v": "46bbb302d8"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 8.7,
+   "focal35": 23,
+   "fnumber": 1.67,
+   "exposure": 0.001707,
+   "iso": 50,
+   "bias": 1.17,
+   "gps": [
+    39.996574,
+    116.269311
+   ]
+  },
+  "dhash": "cc516cd54db456a69734462c4b3a4a7de937c11ed86be2490cc95a654a72166c",
+  "v": "de77c9ba1d",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260419_120741",
@@ -55,9 +116,25 @@
   "h": 1807,
   "tw": 960,
   "th": 723,
+  "bytes": 192746,
   "color": "#c9c6c2",
   "taken": "2026-04-19T12:07:41",
-  "v": "8a0ba306f6"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 160,
+   "fnumber": 2.96,
+   "exposure": 0.007731,
+   "iso": 50,
+   "bias": 0.67,
+   "gps": [
+    39.994707,
+    116.274256
+   ]
+  },
+  "dhash": "60006000600028002000200020002000000000000000000002743205e9082000",
+  "v": "6bce8c5b22",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260419_113932",
@@ -67,9 +144,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 670936,
   "color": "#7e7d64",
   "taken": "2026-04-19T11:39:32",
-  "v": "db17ca5740"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 8.7,
+   "focal35": 48,
+   "fnumber": 1.67,
+   "exposure": 0.003901,
+   "iso": 50,
+   "gps": [
+    39.99864,
+    116.275258
+   ]
+  },
+  "dhash": "44730072086920d908f308f18ce21dc215a535fd34faa07520643070a06690e1",
+  "v": "db76df2316",
+  "schema": 2
  },
  {
   "id": "IMG_20260419_111210_1776597368452edit",
@@ -79,9 +171,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 479928,
   "color": "#222a0f",
   "taken": "2026-04-19T11:11:13",
-  "v": "573afbc321"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 200,
+   "fnumber": 2.96,
+   "exposure": 0.009506,
+   "iso": 50,
+   "bias": -0.67,
+   "gps": [
+    40.001416,
+    116.270213
+   ]
+  },
+  "dhash": "af846e72b9717b11f689d18c671c2c4e9dcd1d861d85a8c229c599c1183adb53",
+  "v": "aa16d86826",
+  "schema": 2
  },
  {
   "id": "IMG_20260418_230316",
@@ -91,9 +199,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 261347,
   "color": "#39382a",
   "taken": "2026-04-18T23:02:45",
-  "v": "d6c2ca85ae"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 8.7,
+   "focal35": 46,
+   "fnumber": 1.67,
+   "exposure": 0.01,
+   "iso": 320,
+   "bias": 0.17,
+   "gps": [
+    39.968066,
+    116.303213
+   ]
+  },
+  "dhash": "c1c800d805640fec1fc83f4ebf87be83fd81fb03fc47f8c67aefadef8fffff9f",
+  "v": "8554741108",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260407_144552",
@@ -103,9 +227,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 650292,
   "color": "#5e6e81",
   "taken": "2026-04-07T14:45:52",
-  "v": "0f20ade06b"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 8.7,
+   "focal35": 46,
+   "fnumber": 1.67,
+   "exposure": 0.000185,
+   "iso": 50,
+   "gps": [
+    39.983764,
+    116.475886
+   ]
+  },
+  "dhash": "ff00ff00ff00ff007f007e005fc0de87fb91f1a23d88b3966388cf0d9f0d1e07",
+  "v": "10dcafb1af",
+  "schema": 2
  },
  {
   "id": "IMG_20260405_085157",
@@ -115,9 +254,21 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 685963,
   "color": "#66686f",
   "taken": "2026-04-04T15:53:39",
-  "v": "8468073d7b"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 200,
+   "fnumber": 2.96,
+   "exposure": 0.01,
+   "iso": 50,
+   "bias": 0.17
+  },
+  "dhash": "a347b305d28cb50d573c669c73380e6dca454865322d22bfec9efdcdfddfb9fe",
+  "v": "4d87c5aeed",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260404_155041_1775399712576edit",
@@ -127,9 +278,20 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 1057049,
   "color": "#999794",
   "taken": "2026-04-04T15:50:41",
-  "v": "0a9145c6cd"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 200,
+   "fnumber": 2.96,
+   "exposure": 0.005868,
+   "iso": 50
+  },
+  "dhash": "0085000600058371499459ba49ba49ba266c664b27492573114a24c9247d007b",
+  "v": "995f5b842d",
+  "schema": 2
  },
  {
   "id": "IMG_20260405_085630_1775399894644edit",
@@ -139,9 +301,21 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 478179,
   "color": "#424b4d",
   "taken": "2026-04-04T15:43:19",
-  "v": "cf44c12357"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 432,
+   "fnumber": 2.96,
+   "exposure": 0.01,
+   "iso": 50,
+   "bias": 0.17
+  },
+  "dhash": "882389218d219e681e4032d078a13c217a283a20b8dc39bc080c2c0c382c3824",
+  "v": "6b8b7a1311",
+  "schema": 2
  },
  {
   "id": "IMG_20260406_113404",
@@ -151,9 +325,25 @@
   "h": 1800,
   "tw": 960,
   "th": 720,
+  "bytes": 369319,
   "color": "#101111",
   "taken": "2026-04-04T13:06:26",
-  "v": "518ec99e7f"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 200,
+   "fnumber": 2.96,
+   "exposure": 0.001925,
+   "iso": 50,
+   "bias": -1.17,
+   "gps": [
+    39.871092,
+    116.36826
+   ]
+  },
+  "dhash": "64042c042408501862b0c116f4477ccb5ce91cad1ead1eac16ae162e36ae962f",
+  "v": "6ec4c98591",
+  "schema": 2
  },
  {
   "id": "IMG_20260404_130241_1775297058129edit",
@@ -163,9 +353,24 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 583983,
   "color": "#1c1a1b",
   "taken": "2026-04-04T13:02:41",
-  "v": "ba5e1e7659"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 115,
+   "fnumber": 2.96,
+   "exposure": 0.000625,
+   "iso": 400,
+   "gps": [
+    39.869229,
+    116.371307
+   ]
+  },
+  "dhash": "47256fa4e7a44f84678267894f80bf807e889e808f01bcc501cc2fccbfc19ac5",
+  "v": "ecc665ebcd",
+  "schema": 2
  },
  {
   "id": "IMG_20260404_134549_1775400287228edit",
@@ -175,9 +380,25 @@
   "h": 1800,
   "tw": 960,
   "th": 720,
+  "bytes": 676043,
   "color": "#584d3a",
   "taken": "2026-04-04T12:56:21",
-  "v": "0c85765924"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 19.9,
+   "focal35": 75,
+   "fnumber": 2.39,
+   "exposure": 0.001412,
+   "iso": 50,
+   "bias": -1.17,
+   "gps": [
+    39.86971,
+    116.370281
+   ]
+  },
+  "dhash": "fd1cfd1eff0efa8efd8fed8cecc4e946c0d386b28c729c339c07dc43dce3cce2",
+  "v": "af48a5fd2c",
+  "schema": 2
  },
  {
   "id": "IMG_20260404_124922_1775459243461edit",
@@ -187,9 +408,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 963987,
   "color": "#4d4722",
   "taken": "2026-04-04T12:48:45",
-  "v": "914270c376"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 8.7,
+   "focal35": 46,
+   "fnumber": 1.67,
+   "exposure": 0.000619,
+   "iso": 50,
+   "gps": [
+    39.869612,
+    116.370428
+   ]
+  },
+  "dhash": "6d48a5e447497734c45563356c276e85ee042e966ef4f0165781de71eff8de38",
+  "v": "5fe48dddb9",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260330_210457",
@@ -199,9 +435,20 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 326139,
   "color": "#705b41",
   "taken": "2026-03-30T21:04:57",
-  "v": "a7982cee0e"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 100,
+   "fnumber": 2.96,
+   "exposure": 0.04,
+   "iso": 125
+  },
+  "dhash": "49fc53f6d3a45b425be65cf43870088609d6a672b6c222e3cd83fe03fe40fc02",
+  "v": "737939a76f",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260325_131349_1774416419015edit",
@@ -211,9 +458,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 444147,
   "color": "#b8492c",
   "taken": "2026-03-25T13:13:50",
-  "v": "b09afdbb09"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 8.7,
+   "focal35": 35,
+   "fnumber": 1.67,
+   "exposure": 0.004173,
+   "iso": 50,
+   "gps": [
+    39.952862,
+    116.311328
+   ]
+  },
+  "dhash": "68620fe440f449883526249c249264b424cbee677a27c318899839586138c07e",
+  "v": "9f8da4df11",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260322_140931_1774163482824edit",
@@ -223,9 +485,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 478504,
   "color": "#545045",
   "taken": "2026-03-22T14:09:32",
-  "v": "d295709864"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 100,
+   "fnumber": 2.96,
+   "exposure": 0.001047,
+   "iso": 160,
+   "gps": [
+    39.968281,
+    116.302439
+   ]
+  },
+  "dhash": "004208250c45183142804831c131c221022102318031803118011ed084819d95",
+  "v": "e144c73c88",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260322_140642_1774162651010edit",
@@ -235,9 +512,24 @@
   "h": 1409,
   "tw": 720,
   "th": 960,
+  "bytes": 229170,
   "color": "#938031",
   "taken": "2026-03-22T14:06:43",
-  "v": "7065bed855"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 200,
+   "fnumber": 2.96,
+   "exposure": 0.005287,
+   "iso": 50,
+   "gps": [
+    39.968272,
+    116.302532
+   ]
+  },
+  "dhash": "2c162d8665160722c4c8dd44cb8becc34cc55cc78c731d2f25a730b7583e7317",
+  "v": "8d5791ce0d",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260319_174818_1773917225434edit",
@@ -247,9 +539,24 @@
   "h": 1800,
   "tw": 960,
   "th": 720,
+  "bytes": 380740,
   "color": "#67564e",
   "taken": "2026-03-19T17:48:18",
-  "v": "6be5af8758"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 19.9,
+   "focal35": 75,
+   "fnumber": 2.39,
+   "exposure": 0.001113,
+   "iso": 160,
+   "gps": [
+    39.965293,
+    116.314868
+   ]
+  },
+  "dhash": "0130403040d010e011315d925c916d93f6a1fdc3edc48b66dc603e743630364c",
+  "v": "f5183c7a1b",
+  "schema": 2
  },
  {
   "id": "IMG_20260317_092734",
@@ -259,9 +566,24 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 562253,
   "color": "#7d7777",
   "taken": "2026-03-17T09:27:34",
-  "v": "80442e2eae"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 19.9,
+   "focal35": 75,
+   "fnumber": 2.39,
+   "exposure": 0.00125,
+   "iso": 200,
+   "gps": [
+    39.968341,
+    116.313839
+   ]
+  },
+  "dhash": "c640ab49e73049e0c1e2c36281a207e506d103d1061906184600840004000c04",
+  "v": "001a7292b1",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260312_095656",
@@ -271,9 +593,24 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 275637,
   "color": "#7f828b",
   "taken": "2026-03-12T09:56:57",
-  "v": "23c34a68be"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 400,
+   "fnumber": 2.96,
+   "exposure": 0.00438,
+   "iso": 50,
+   "gps": [
+    39.955071,
+    116.314561
+   ]
+  },
+  "dhash": "01030043004522132232703b5919e1fad30dc6aac6a206aa84aa672a2a3a1a3a",
+  "v": "b1846ebfb1",
+  "schema": 2
  },
  {
   "id": "IMG_20260308_220713",
@@ -283,9 +620,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 721449,
   "color": "#554f46",
   "taken": "2026-03-08T22:00:15",
-  "v": "3b0d32acc0"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 19.9,
+   "focal35": 75,
+   "fnumber": 2.39,
+   "exposure": 0.05,
+   "iso": 250,
+   "gps": [
+    39.968541,
+    116.310016
+   ]
+  },
+  "dhash": "4b80538353835391861de68387e333d132d132d576c7d7a34589315292409200",
+  "v": "d43354408e",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260302_184154",
@@ -295,9 +647,24 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 505801,
   "color": "#4f3338",
   "taken": "2026-03-02T18:41:54",
-  "v": "9b5e57bd6f"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 19.9,
+   "focal35": 75,
+   "fnumber": 2.39,
+   "exposure": 0.05,
+   "iso": 500,
+   "gps": [
+    34.719399,
+    113.73977
+   ]
+  },
+  "dhash": "e000a0007e381e3956895f496d20a83d3d28270e1e4ec6fcf92cfd04fd24f024",
+  "v": "d3a2538b75",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260302_163925",
@@ -307,9 +674,24 @@
   "h": 2400,
   "tw": 723,
   "th": 960,
+  "bytes": 673367,
   "color": "#707160",
   "taken": "2026-03-02T16:39:26",
-  "v": "4cc03dcffb"
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 19.9,
+   "focal35": 75,
+   "fnumber": 2.39,
+   "exposure": 0.0025,
+   "iso": 640,
+   "gps": [
+    34.750435,
+    113.740986
+   ]
+  },
+  "dhash": "757b7be92d393f083c01585614b44c2c4c4468047806fc017e007f007f047f82",
+  "v": "9e1f54087a",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260213_212527",
@@ -319,9 +701,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 228133,
   "color": "#83705d",
   "taken": "2026-02-13T21:25:27",
-  "v": "908dcc0779"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 48,
+   "fnumber": 1.6,
+   "exposure": 0.04,
+   "iso": 2000,
+   "gps": [
+    34.746844,
+    113.667259
+   ]
+  },
+  "dhash": "ef8bf643a9cfb19d839ecb9bcd9dd9efebeeb1fdf3fbe7f86ffccff8ffbefb9f",
+  "v": "e5c8dc6107",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260212_111539",
@@ -331,9 +728,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 409002,
   "color": "#7a7b7f",
   "taken": "2026-02-12T11:15:39",
-  "v": "4e5ae8b5d7"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 137,
+   "fnumber": 1.6,
+   "exposure": 0.000376,
+   "iso": 50,
+   "gps": [
+    39.969247,
+    116.303224
+   ]
+  },
+  "dhash": "6cd92a4c66cd264c264c2648264c2448264c2448224c64482644644c2244644c",
+  "v": "146b98d7ce",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260117_192438",
@@ -343,9 +755,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 372400,
   "color": "#302a26",
   "taken": "2026-01-17T19:24:38",
-  "v": "58d8afece5"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 48,
+   "fnumber": 1.6,
+   "exposure": 0.02,
+   "iso": 320,
+   "gps": [
+    39.966982,
+    116.307454
+   ]
+  },
+  "dhash": "5c617e80f5407e10ff007f00ff00ff02bf00db01f600be90d912b88b3532e3a3",
+  "v": "8615c515f0",
+  "schema": 2
  },
  {
   "id": "MVIMG_20260116_170250",
@@ -355,9 +782,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 514410,
   "color": "#706454",
   "taken": "2026-01-16T17:02:50",
-  "v": "351ae4596b"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 48,
+   "fnumber": 1.6,
+   "exposure": 0.005618,
+   "iso": 50,
+   "gps": [
+    39.955178,
+    116.314463
+   ]
+  },
+  "dhash": "800000000000400061925192a5f7b9368e0da68d81c186f10778cb968a4f1c63",
+  "v": "a1a6551e16",
+  "schema": 2
  },
  {
   "id": "MVIMG_20251224_160901",
@@ -367,9 +809,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 550724,
   "color": "#6f6d69",
   "taken": "2025-12-24T16:09:01",
-  "v": "d32750a8d1"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 72,
+   "fnumber": 1.6,
+   "exposure": 0.01,
+   "iso": 160,
+   "bias": 0.17,
+   "gps": [
+    39.955321,
+    116.315097
+   ]
+  },
+  "dhash": "f5e4f4f1fff5feb6eeb7eabe32c9f34cd8c4a8d1bb89389b3784b1e0e8bacab3",
+  "v": "a05ec62eb6",
+  "schema": 2
  },
  {
   "id": "IMG_20251214_125259",
@@ -379,9 +837,25 @@
   "h": 2085,
   "tw": 715,
   "th": 960,
+  "bytes": 286932,
   "color": "#965b50",
   "taken": "2025-12-14T09:35:48",
-  "v": "d4087c6775"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 48,
+   "fnumber": 1.6,
+   "exposure": 0.004369,
+   "iso": 50,
+   "bias": 0.17,
+   "gps": [
+    39.919347,
+    116.390169
+   ]
+  },
+  "dhash": "c540c004c504c184e184c1c0c070f038e11cc49ecb14d354d354c558ebec9483",
+  "v": "8ca5d3eb85",
+  "schema": 2
  },
  {
   "id": "MVIMG_20251214_090907",
@@ -391,9 +865,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 366932,
   "color": "#66738b",
   "taken": "2025-12-14T09:09:07",
-  "v": "f043eb6278"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 67,
+   "fnumber": 1.6,
+   "exposure": 0.000679,
+   "iso": 50,
+   "bias": 0.17,
+   "gps": [
+    39.91752,
+    116.390072
+   ]
+  },
+  "dhash": "000000000000000000000400074000e0113814eee1cf8e2fa7ee07d80687f243",
+  "v": "50f2d3b6cd",
+  "schema": 2
  },
  {
   "id": "MVIMG_20251120_125419",
@@ -403,9 +893,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 412658,
   "color": "#917666",
   "taken": "2025-11-20T12:54:19",
-  "v": "0ef4a85504"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 70,
+   "fnumber": 1.6,
+   "exposure": 0.01,
+   "iso": 80,
+   "bias": 0.17,
+   "gps": [
+    39.954729,
+    116.313696
+   ]
+  },
+  "dhash": "0fc19bc5b1803819f938b89cf5fcc3b007c003f801f081e104e161c972b6f89a",
+  "v": "ea357d8324",
+  "schema": 2
  },
  {
   "id": "IMG_20251115_161502",
@@ -415,9 +921,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 740354,
   "color": "#7d613a",
   "taken": "2025-11-15T16:15:02",
-  "v": "9d196b04ad"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 91,
+   "fnumber": 1.6,
+   "exposure": 0.00114,
+   "iso": 50,
+   "bias": 0.17,
+   "gps": [
+    39.984523,
+    116.293158
+   ]
+  },
+  "dhash": "fc0cfe09fc09fec0ffc0fe00fc0078006014ad61fbc1ff00e3c00f009f001f00",
+  "v": "8b5193c543",
+  "schema": 2
  },
  {
   "id": "IMG_20251109_111515",
@@ -427,9 +949,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 1011087,
   "color": "#97782d",
   "taken": "2025-11-09T11:15:16",
-  "v": "50275abaa7"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 115,
+   "fnumber": 1.6,
+   "exposure": 0.000899,
+   "iso": 50,
+   "bias": 0.17,
+   "gps": [
+    39.96961,
+    116.304274
+   ]
+  },
+  "dhash": "278b9663143e393a37a124c32647aee6a2e4b2c4b2e6b4e8146439cc3a0889c4",
+  "v": "2ac85158a4",
+  "schema": 2
  },
  {
   "id": "20251105232827_IMG_4980",
@@ -439,9 +977,20 @@
   "h": 2400,
   "tw": 640,
   "th": 960,
+  "bytes": 629869,
   "color": "#596736",
   "taken": "2025-11-05T23:28:27",
-  "v": "19368aa103"
+  "exif": {
+   "camera": "Canon EOS R50",
+   "lens": "RF-S18-150mm F3.5-6.3 IS STM",
+   "focal": 141.0,
+   "fnumber": 6.3,
+   "exposure": 0.00625,
+   "iso": 2500
+  },
+  "dhash": "7850e84cf149a0bb8431c4b64e296b30ebc1de437d933f1999dcd0b641b663bf",
+  "v": "0563de1f1a",
+  "schema": 2
  },
  {
   "id": "IMG_20251102_075431",
@@ -451,9 +1000,25 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 1132165,
   "color": "#6c6c37",
   "taken": "2025-11-02T07:54:31",
-  "v": "fc4732f700"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 58,
+   "fnumber": 1.6,
+   "exposure": 0.008882,
+   "iso": 50,
+   "bias": 0.17,
+   "gps": [
+    39.969496,
+    116.303252
+   ]
+  },
+  "dhash": "4733ab314b298b332b212a944b2875dbe7d818f2c3c06f377c3cc3c01c0fe154",
+  "v": "2501f3e4ee",
+  "schema": 2
  },
  {
   "id": "IMG_20251025_103149",
@@ -463,9 +1028,25 @@
   "h": 2400,
   "tw": 960,
   "th": 960,
+  "bytes": 747657,
   "color": "#92969b",
   "taken": "2025-10-25T10:31:49",
-  "v": "ed33fe13d1"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 77,
+   "fnumber": 1.6,
+   "exposure": 0.000775,
+   "iso": 50,
+   "bias": 0.17,
+   "gps": [
+    39.937985,
+    116.349007
+   ]
+  },
+  "dhash": "401004012034102900680269a36487f68076c03685689309829178a0937c24fc",
+  "v": "a7471a02e2",
+  "schema": 2
  },
  {
   "id": "IMG_20251021_103247_1772797619929edit",
@@ -475,9 +1056,24 @@
   "h": 2400,
   "tw": 720,
   "th": 960,
+  "bytes": 1216049,
   "color": "#635e48",
   "taken": "2025-10-21T10:32:47",
-  "v": "225fc9370e"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 55,
+   "fnumber": 1.6,
+   "exposure": 0.002425,
+   "iso": 50,
+   "gps": [
+    39.969255,
+    116.304518
+   ]
+  },
+  "dhash": "ad0adcb067a80a9c82482461033884ac0c6906710011c44534ca20cd229832f4",
+  "v": "0a75a69737",
+  "schema": 2
  },
  {
   "id": "IMG_20250930_171706",
@@ -487,9 +1083,24 @@
   "h": 2400,
   "tw": 960,
   "th": 960,
+  "bytes": 1007422,
   "color": "#716d52",
   "taken": "2025-09-30T17:09:01",
-  "v": "038e373769"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 48,
+   "fnumber": 1.6,
+   "exposure": 0.005938,
+   "iso": 50,
+   "gps": [
+    39.939364,
+    116.31545
+   ]
+  },
+  "dhash": "fe9f7bbf7881fc813f0328813a803900b191b39073e610619e76c736964a9e06",
+  "v": "4ac653d75e",
+  "schema": 2
  },
  {
   "id": "IMG_20251026_132529",
@@ -499,9 +1110,24 @@
   "h": 1800,
   "tw": 960,
   "th": 720,
+  "bytes": 402931,
   "color": "#977b57",
   "taken": "2025-08-31T18:24:17",
-  "v": "d9265b813d"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 48,
+   "fnumber": 1.6,
+   "exposure": 0.001073,
+   "iso": 50,
+   "gps": [
+    39.510272,
+    116.408855
+   ]
+  },
+  "dhash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaeb2a6aaa6aa2738755254725642567056701",
+  "v": "2753026fd7",
+  "schema": 2
  },
  {
   "id": "IMG_20250628_192208",
@@ -511,9 +1137,20 @@
   "h": 1800,
   "tw": 960,
   "th": 720,
+  "bytes": 563440,
   "color": "#837f6d",
   "taken": "2025-06-28T19:22:09",
-  "v": "ee91fc3234"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 43,
+   "fnumber": 1.6,
+   "exposure": 0.04,
+   "iso": 1250
+  },
+  "dhash": "6d58655a338edbb8f1cdf2efceeeeaf489b013ae87981f3a7870c1e483f18691",
+  "v": "6ce8daa5e3",
+  "schema": 2
  },
  {
   "id": "IMG_20250312_214608",
@@ -523,9 +1160,24 @@
   "h": 1800,
   "tw": 960,
   "th": 720,
+  "bytes": 780829,
   "color": "#49403b",
   "taken": "2025-03-12T21:46:09",
-  "v": "39f0d26722"
+  "exif": {
+   "camera": "Xiaomi REDMI K80",
+   "focal": 5.8,
+   "focal35": 24,
+   "fnumber": 1.6,
+   "exposure": 0.04,
+   "iso": 1600,
+   "gps": [
+    31.197373,
+    121.417122
+   ]
+  },
+  "dhash": "603372337a33322b78ebb86e9c6dd84fe8fd707b70b7f2c9f6663233e318938e",
+  "v": "36c5f9ab14",
+  "schema": 2
  },
  {
   "id": "IMG_20230602_212841",
@@ -535,8 +1187,23 @@
   "h": 1801,
   "tw": 960,
   "th": 720,
+  "bytes": 494079,
   "color": "#6a6a67",
   "taken": "2023-06-02T19:14:26",
-  "v": "eaea7bb7e1"
+  "exif": {
+   "camera": "HUAWEI HLK-AL00",
+   "focal": 5.5,
+   "focal35": 26,
+   "fnumber": 1.8,
+   "exposure": 0.001079,
+   "iso": 50,
+   "gps": [
+    34.78767,
+    113.804398
+   ]
+  },
+  "dhash": "fe20c7c83bd0edf0f7c0f6e5f6e5f085f4a7f6e5e6e1fcf49fd4afe92668a78c",
+  "v": "98ab3b49a5",
+  "schema": 2
  }
 ]
