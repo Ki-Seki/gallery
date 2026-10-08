@@ -1,5 +1,59 @@
 [
  {
+  "id": "IMG_20260813_191846",
+  "src": "photos/IMG_20260813_191846.jpg",
+  "thumb": "thumbs/IMG_20260813_191846.webp",
+  "w": 1800,
+  "h": 2400,
+  "tw": 720,
+  "th": 960,
+  "bytes": 812450,
+  "color": "#365a7d",
+  "taken": "2026-08-13T18:51:52",
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 8.7,
+   "focal35": 46,
+   "fnumber": 1.67,
+   "exposure": 0.005344,
+   "iso": 50,
+   "gps": [
+    39.967832,
+    116.303828
+   ]
+  },
+  "dhash": "0050acc03504319170c1557555d830526d609c1aa08af2407fe38dc4679890d8",
+  "v": "b33a31e788",
+  "schema": 2
+ },
+ {
+  "id": "MVIMG_20260505_051159",
+  "src": "photos/MVIMG_20260505_051159.jpg",
+  "thumb": "thumbs/MVIMG_20260505_051159.webp",
+  "w": 1807,
+  "h": 2400,
+  "tw": 723,
+  "th": 960,
+  "bytes": 146453,
+  "color": "#895f42",
+  "taken": "2026-05-05T05:11:59",
+  "exif": {
+   "camera": "Xiaomi 17 Ultra by Leica",
+   "focal": 26.5,
+   "focal35": 400,
+   "fnumber": 2.96,
+   "exposure": 0.01,
+   "iso": 64,
+   "gps": [
+    39.893421,
+    116.315089
+   ]
+  },
+  "dhash": "fc40f940eb80e900e900ebc0cf40cfc0cd80cc808f001f402f00558061603470",
+  "v": "9ec806c4d7",
+  "schema": 2
+ },
+ {
   "id": "IMG_20260419_133218",
   "src": "photos/IMG_20260419_133218.jpg",
   "thumb": "thumbs/IMG_20260419_133218.webp",
