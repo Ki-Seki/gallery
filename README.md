@@ -47,3 +47,7 @@ scripts/process.py    optimize, dedupe, thumbnail, manifest
 ```
 
 Tunables (`MAX_EDGE`, `QUALITY`, `THUMB_EDGE`, `DUP_BITS`, …) sit at the top of `scripts/process.py`.
+
+## Acknowledgements
+
+The look and feel (the Geist type, the four-column bar along the bottom, the `0001 / 0045` counter, the `－ ＋` controls, the prev / next cursor label) is borrowed from [Bridget](https://github.com/Sped0n/bridget) by [Sped0n](https://github.com/Sped0n), a minimal Hugo theme for photographers and the theme of this gallery's previous version. Thank you!
