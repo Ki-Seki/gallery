@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>The Kiseki Gallery</title>
+    <meta name="description" content="A pile of photographs by Shichao Song." />
+    <meta property="og:title" content="The Kiseki Gallery" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A pile of photographs by Shichao Song." />
+    <meta name="theme-color" content="#f1f0ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#151514" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <header class="intro">
+      <p>
+        I'm Shichao Song. This gallery is where light and memory meet. You can also visit
+        <a href="https://ki-seki.github.io/" target="_blank" rel="noopener noreferrer"
+          >The Kiseki Log <span aria-hidden="true">↗</span></a
+        >
+        for notes on my work and life.
+      </p>
+      <p class="hint">Drag the top print away to see the next one. Click it to look closer.</p>
+    </header>
+
+    <main class="table" id="table">
+      <div class="pile" id="pile" aria-hidden="true"></div>
+      <p class="empty" hidden>The table is empty. Drop some photos into <code>photos/</code>.</p>
+    </main>
+
+    <nav class="bar" aria-label="Gallery">
+      <a class="title" href="./">The Kiseki Gallery</a>
+      <span><button type="button" data-act="prev">prev</button> &middot; <button type="button" data-act="next">next</button></span>
+      <span><button type="button" data-act="shuffle">shuffle</button></span>
+      <span class="index"><span data-cur>0000</span> / <span data-total>0000</span></span>
+    </nav>
+
+    <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+      <figure class="stage">
+        <div class="frame">
+          <img class="lo" alt="" draggable="false" />
+          <img class="hi" alt="" draggable="false" />
+        </div>
+      </figure>
+      <nav class="bar" aria-label="Photo">
+        <span><button type="button" data-act="close">close</button></span>
+        <span><button type="button" data-act="vprev">prev</button> &middot; <button type="button" data-act="vnext">next</button></span>
+        <span class="meta" data-date></span>
+        <span class="index"><span data-cur>0000</span> / <span data-total>0000</span></span>
+      </nav>
+      <div class="cursor" aria-hidden="true"></div>
+    </div>
+  </body>
+</html>
