@@ -325,11 +325,19 @@
 
   function render() {
     const p = photoAt(pos)
-    lo.src = href(p.thumb, p.v)
-    hi.classList.remove('in')
-    hi.dataset.id = p.id
-    hi.onload = () => hi.dataset.id === p.id && hi.classList.add('in')
-    hi.src = href(p.src, p.v)
+    // An <img> keeps painting its previous picture until the new one arrives,
+    // so hide both layers at once and show the photo's colour meanwhile.
+    frame.style.setProperty('--c', p.color)
+    for (const [img, src] of [
+      [lo, href(p.thumb, p.v)],
+      [hi, href(p.src, p.v)],
+    ]) {
+      img.classList.remove('in')
+      img.dataset.id = p.id
+      img.onload = () => img.dataset.id === p.id && img.classList.add('in')
+      img.src = src
+      if (img.complete && img.naturalWidth) img.classList.add('in')
+    }
     hi.alt = 'Photograph' + (p.taken ? ', ' + new Date(p.taken).toDateString() : '')
     fillInfo(p)
     layout()
